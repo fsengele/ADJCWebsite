@@ -2,3 +2,4 @@
 
 ## Project Guidelines
 - For ADJCWebsite, preserve the existing ASP.NET Core MVC architecture, Bootstrap 5, Identity configuration, real images, and existing functionality. Implement website work in phases, using the requested ADJC green palette and French page labels; do not publish or create Git commits without review.
+- For ADJCWebsite authentication pages, preserve the existing ASP.NET Core Identity handlers, database configuration, password policy, confirmation/reset behavior, cookies, antiforgery, and routes. Use a dedicated auth.css/auth.js with the ADJC white/deep-green design, keep form fields compatible with the existing Identity model, and do not add name fields or migrations without explicit backend support.- Do not publish, deploy, or create Git commits without review.
