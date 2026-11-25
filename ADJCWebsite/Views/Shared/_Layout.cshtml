@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Assemblée des Disciples de Jésus-Christ — présenter et prêcher Jésus-Christ, l'unique espoir du salut de l'humanité." />
+    <title>@ViewData["Title"] | ADJC</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ADJCWebsite.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light site-navbar">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-3" asp-area="" asp-controller="Home" asp-action="Index" aria-label="ADJC, accueil">
+                    <img src="~/images/WhatsApp Image 2026-11-13 at 11.23.50 AM.jpeg" alt="Logo officiel de l'ADJC" class="brand-logo" />
+                    <span class="brand-name">Assemblée des Disciples<br class="d-none d-xl-block" /> de Jésus-Christ</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#accueil">Accueil</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Découvrir</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Ministry" asp-action="Index">Notre Ministère</a></li>
+                                <li><a class="dropdown-item" asp-controller="Vision" asp-action="Index">Vision</a></li>
+                                <li><a class="dropdown-item" href="/#activites">Activités</a></li>
+                                <li><a class="dropdown-item" href="/#horaires">Prédications</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Rejoindre" asp-action="Index">Nous rejoindre</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                    </ul>
+                    <a class="btn btn-primary ms-lg-4 mt-3 mt-lg-0" asp-controller="Contact" asp-action="Index">Nous écrire <span aria-hidden="true">↗</span></a>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+            @RenderBody()
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-5">
+                    <a class="footer-brand d-flex align-items-center gap-3" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="~/images/WhatsApp Image 2026-11-13 at 11.23.50 AM.jpeg" alt="Logo officiel de l'ADJC" class="footer-logo" />
+                        <span>Assemblée des Disciples<br /> de Jésus-Christ</span>
+                    </a>
+                    <p class="footer-intro">Une communauté enracinée dans la Parole, la communion fraternelle et l'espérance en Jésus-Christ.</p>
+                    <p class="footer-address">2–4 Chemin des Fourches<br />93380 Pierrefitte</p>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h2 class="footer-title">Navigation</h2>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="/#accueil">Accueil</a></li>
+                        <li><a asp-controller="Ministry" asp-action="Index">Notre Ministère</a></li>
+                        <li><a asp-controller="Vision" asp-action="Index">Notre vision</a></li>
+                        <li><a asp-controller="Rejoindre" asp-action="Index">Nous rejoindre</a></li>
+                        <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                        <li><a href="/#activites">Activités</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <h2 class="footer-title">Restons connectés</h2>
+                    <p class="footer-muted">Nos réseaux sociaux seront bientôt disponibles.</p>
+                    <div class="social-links" aria-label="Réseaux sociaux à venir">
+                        <span title="YouTube">YT</span><span title="Facebook">f</span><span title="Instagram">ig</span><span title="TikTok">♪</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; @DateTime.Now.Year ADJC. Tous droits réservés.</span>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

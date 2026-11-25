@@ -1,0 +1,27 @@
+@{
+    var eyebrow = ViewData["HeroEyebrow"] as string ?? "Assemblée des Disciples de Jésus-Christ";
+    var title = ViewData["HeroTitle"] as string ?? "Notre ministère";
+    var lead = ViewData["HeroLead"] as string ?? string.Empty;
+    var image = ViewData["HeroImage"] as string ?? "Arthur1.jpeg";
+    var alt = ViewData["HeroAlt"] as string ?? "Pasteur de l'ADJC";
+}
+
+<section class="page-hero">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
+                    <a asp-controller="Home" asp-action="Index">Accueil</a><span aria-hidden="true">/</span><span>@title</span>
+                </nav>
+                <p class="eyebrow">@eyebrow</p>
+                <h1>@title</h1>
+                <p class="page-hero-lead">@lead</p>
+            </div>
+            <div class="col-lg-5">
+                <div class="page-hero-image-wrap">
+                    <img src="~/images/@image" alt="@alt" class="page-hero-image" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

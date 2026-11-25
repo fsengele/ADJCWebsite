@@ -1,0 +1,69 @@
+@{
+    ViewData["Title"] = "Notre Ministère";
+    ViewData["HeroEyebrow"] = "Une foi vivante, une mission éternelle";
+    ViewData["HeroTitle"] = "Notre ministère";
+    ViewData["HeroLead"] = "Présenter et prêcher Jésus-Christ comme l'unique espoir du salut de l'humanité, en faisant des disciples enracinés dans la Parole.";
+    ViewData["HeroImage"] = "Arthur1.jpeg";
+    ViewData["HeroAlt"] = "Pasteur de l'ADJC dans un portrait professionnel";
+}
+
+@await Html.PartialAsync("_PageHero")
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <p class="eyebrow">Qui sommes-nous ?</p>
+                <h2>Une Église tournée vers <span>Jésus-Christ</span></h2>
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+                <p class="section-copy mt-0">L'Assemblée des Disciples de Jésus-Christ est une communauté chrétienne qui désire vivre l'Évangile avec simplicité, profondeur et fidélité.</p>
+                <p class="section-copy muted">Nous accueillons chaque personne dans un environnement de foi, d'enseignement et de communion. Notre désir est de voir chaque disciple grandir, servir et porter l'espérance de Jésus-Christ autour de lui.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="soft-section section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="eyebrow">Notre fondation</p>
+            <h2>Le Plan du Ciel</h2>
+            <p>Une direction claire pour accomplir la mission confiée à l'Église.</p>
+        </div>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-3"><article class="info-card"><div class="card-icon">✦</div><h3>Notre Message</h3><p>Jésus-Christ, l'espoir de l'humanité. Nous annonçons le salut et la grâce disponibles en lui.</p></article></div>
+            <div class="col-md-6 col-lg-3"><article class="info-card"><div class="card-icon">◎</div><h3>Notre Vision</h3><p>Restaurer et accomplir la mission principale de l'Église : faire des disciples pour Jésus-Christ.</p></article></div>
+            <div class="col-md-6 col-lg-3"><article class="info-card"><div class="card-icon">◈</div><h3>Notre Mission</h3><p>Enseigner, préparer les disciples à la maturité spirituelle et annoncer le salut.</p></article></div>
+            <div class="col-md-6 col-lg-3"><article class="info-card"><div class="card-icon">⌖</div><h3>Notre champ d'action</h3><p>Servir l'Église, les familles et la communauté par la foi, l'espérance et l'amour.</p></article></div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <p class="eyebrow">Une parole qui transforme</p>
+                <h2>Notre message et notre mission</h2>
+                <p class="section-copy">Jésus-Christ est l'espoir de l'humanité. Notre ministère présente sa personne, son œuvre et son appel à chaque génération.</p>
+                <p class="section-copy muted">Nous enseignons les prescriptions de Jésus-Christ, nous préparons les disciples à la maturité spirituelle et nous annonçons le salut avec foi et compassion.</p>
+                <a class="btn btn-primary" asp-controller="Vision" asp-action="Index">Découvrir notre vision <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="quote-card"><span aria-hidden="true">“</span><p>Faire des disciples n'est pas seulement notre activité : c'est l'expression de notre obéissance à Jésus-Christ.</p><strong>Assemblée des Disciples de Jésus-Christ</strong></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="soft-section section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="eyebrow">Notre vie d'Église</p>
+            <h2>Les fondements spirituels</h2>
+            <p>Quatre habitudes qui nourrissent notre marche et notre communion.</p>
+        </div>
+        <div class="mt-4">@await Html.PartialAsync("_FoundationCards")</div>
+    </div>
+</section>

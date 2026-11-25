@@ -1,0 +1,58 @@
+@model ADJCWebsite.Models.ContactMessageViewModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<section class="contact-hero">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <nav class="breadcrumb-nav" aria-label="Fil d'Ariane"><a asp-controller="Home" asp-action="Index">Accueil</a><span aria-hidden="true">/</span><span>Contact</span></nav>
+                <p class="eyebrow">Nous sommes à votre écoute</p>
+                <h1>Parlons de ce qui compte <span>vraiment</span></h1>
+                <p class="contact-hero-lead">Une question, une demande de prière ou le désir de découvrir l'ADJC ? Écrivez-nous, nous serons heureux de vous accueillir.</p>
+            </div>
+            <div class="col-lg-5"><div class="contact-hero-art"><img src="~/images/Arthur7.jpeg" alt="Pasteur de l'ADJC dans un portrait professionnel" /></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding contact-page-section">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="contact-form-card">
+                    <div class="section-heading"><p class="eyebrow">Écrivez-nous</p><h2>Comment pouvons-nous vous aider ?</h2><p>Les champs marqués d'un astérisque sont obligatoires.</p></div>
+                    @if (ViewData["EmailNotConfigured"] is true)
+                    {
+                        <div class="alert alert-warning contact-status" role="alert"><strong>Aucun message n'a été envoyé.</strong><br />La messagerie de l'Église n'est pas encore configurée. Cette page est prête pour une future intégration sécurisée.</div>
+                    }
+                    <div asp-validation-summary="ModelOnly" class="validation-summary" role="alert"></div>
+                    <form asp-controller="Contact" asp-action="Index" method="post" class="contact-form" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6"><div class="form-floating"><input asp-for="FullName" class="form-control" placeholder="Nom complet" autocomplete="name" /><label asp-for="FullName">Nom complet *</label></div><span asp-validation-for="FullName" class="field-validation-error"></span></div>
+                            <div class="col-md-6"><div class="form-floating"><input asp-for="Email" class="form-control" placeholder="Adresse e-mail" autocomplete="email" /><label asp-for="Email">Adresse e-mail *</label></div><span asp-validation-for="Email" class="field-validation-error"></span></div>
+                            <div class="col-12"><div class="form-floating"><input asp-for="Subject" class="form-control" placeholder="Sujet" /><label asp-for="Subject">Sujet *</label></div><span asp-validation-for="Subject" class="field-validation-error"></span></div>
+                            <div class="col-12"><div class="form-floating"><textarea asp-for="Message" class="form-control contact-textarea" placeholder="Votre message"></textarea><label asp-for="Message">Votre message *</label></div><span asp-validation-for="Message" class="field-validation-error"></span></div>
+                            <div class="col-12 d-flex align-items-center justify-content-between flex-wrap gap-3"><p class="form-note mb-0">Vos informations resteront utilisées uniquement pour répondre à votre demande.</p><button type="submit" class="btn btn-primary contact-submit"><span class="submit-label">Vérifier mon message</span><span class="submit-loading" hidden>Vérification…</span> <span aria-hidden="true">↗</span></button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="contact-side-card">
+                    <p class="eyebrow">Retrouvez-nous</p>
+                    <h2>Une communauté près de vous</h2>
+                    <div class="contact-detail"><span class="contact-detail-icon">⌖</span><div><strong>Adresse</strong><p>2–4 Chemin des Fourches<br />93380 Pierrefitte</p><a href="https://www.google.com/maps/search/?api=1&amp;query=2-4+Chemin+des+Fourches%2C+93380+Pierrefitte" target="_blank" rel="noopener">Voir l'itinéraire <span aria-hidden="true">↗</span></a></div></div>
+                    <div class="contact-detail"><span class="contact-detail-icon">▣</span><div><strong>Culte d'adoration</strong><p>Chaque dimanche<br />12H30 – 15H30</p></div></div>
+                    <div class="contact-detail"><span class="contact-detail-icon">◷</span><div><strong>Culte d'enseignement</strong><p>Chaque mercredi<br />18H30 – 20H00</p></div></div>
+                </div>
+                <div class="contact-verse"><span>« Demandez, et l'on vous donnera; cherchez, et vous trouverez; frappez, et l'on vous ouvrira. »</span><strong>Matthieu 7:7 — Louis Segond 1910</strong></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

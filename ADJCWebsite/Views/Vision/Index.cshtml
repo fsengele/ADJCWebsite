@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "Notre Vision";
+    ViewData["HeroEyebrow"] = "Une direction pour demain";
+    ViewData["HeroTitle"] = "Notre vision";
+    ViewData["HeroLead"] = "Restaurer et accomplir la mission principale de l'Église, qui est de faire des disciples pour Jésus-Christ.";
+    ViewData["HeroImage"] = "Arthur4.jpeg";
+    ViewData["HeroAlt"] = "Pasteur de l'ADJC présentant la vision de l'Église";
+}
+
+@await Html.PartialAsync("_PageHero")
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <p class="eyebrow">Pourquoi nous existons</p>
+                <h2>Voir une génération transformée par <span>l'Évangile</span></h2>
+                <p class="section-copy">Nous croyons que l'Église est appelée à faire connaître Jésus-Christ, à former des disciples et à servir son prochain avec fidélité.</p>
+                <p class="section-copy muted">Notre vision est de restaurer la mission essentielle de l'Église en plaçant la Parole, la prière, la communion fraternelle et le témoignage au cœur de notre vie commune.</p>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="vision-statement"><span class="statement-mark" aria-hidden="true">✦</span><p>Une Église qui enseigne. Une Église qui accompagne. Une Église qui envoie.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="soft-section section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="eyebrow">Notre socle</p>
+            <h2>Les quatre fondements de l'Église</h2>
+            <p>Une foi solide se construit dans une relation vivante avec Dieu et avec les autres.</p>
+        </div>
+        <div class="mt-4">@await Html.PartialAsync("_FoundationCards")</div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Notre feuille de route</p>
+            <h2>Objectifs assignés</h2>
+            <p>Des engagements concrets pour servir la croissance spirituelle de chaque disciple.</p>
+        </div>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6"><article class="objective-card objective-feature"><span class="objective-number">01</span><h3>Un bon enseignement</h3><p>Dispenser un enseignement biblique clair, fidèle et applicable dans la vie quotidienne.</p></article></div>
+            <div class="col-md-6"><article class="objective-card objective-feature"><span class="objective-number">02</span><h3>La perfection spirituelle</h3><p>Accompagner chaque disciple vers une maturité spirituelle toujours plus profonde.</p></article></div>
+            <div class="col-md-6"><article class="objective-card objective-feature"><span class="objective-number">03</span><h3>Les quatre fondements de l'Église</h3><p>Fortifier l'enseignement, la communion fraternelle, la fraction du pain et les prières.</p></article></div>
+            <div class="col-md-6"><article class="objective-card objective-feature"><span class="objective-number">04</span><h3>Un désir urgent pour le Ciel</h3><p>Vivre dans l'espérance du retour de Jésus-Christ et inviter d'autres personnes à le connaître.</p></article></div>
+        </div>
+        <div class="text-center mt-5"><a class="btn btn-outline-primary" asp-controller="Ministry" asp-action="Index">Découvrir notre ministère <span aria-hidden="true">↗</span></a></div>
+    </div>
+</section>

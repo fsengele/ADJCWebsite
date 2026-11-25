@@ -1,0 +1,75 @@
+@{
+    ViewData["Title"] = "Accueil";
+}
+
+<section class="hero-section" id="accueil">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <p class="eyebrow">Bienvenue à l'ADJC</p>
+                <h1>Jésus-Christ,<br /><span>l'espoir de l'humanité</span></h1>
+                <p class="hero-lead">Nous présentons et prêchons Jésus-Christ comme l'unique espoir du salut de l'humanité.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" asp-controller="Ministry" asp-action="Index">Découvrir notre ministère <span aria-hidden="true">↗</span></a>
+                    <a class="btn btn-outline-primary" asp-controller="Vision" asp-action="Index">Notre vision</a>
+                    <a class="btn btn-text" href="#horaires">Horaires des cultes</a>
+                </div>
+                <div class="hero-note"><span class="note-mark" aria-hidden="true">✦</span> Une foi vivante. Une mission éternelle.</div>
+            </div>
+            <div class="col-lg-6 hero-visual">
+                <div class="hero-image-wrap">
+                    <div class="hero-accent"></div>
+                    <img src="~/images/Arthur 2.jpeg" alt="Pasteur de l'ADJC portant un costume orange" class="hero-image" />
+                    <div class="hero-badge"><strong>ADJC</strong><span>Une communauté<br />pour faire des disciples</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding" id="plan">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="eyebrow">Notre fondation</p>
+            <h2>Le Plan du Ciel</h2>
+            <p>Une vision claire pour une Église engagée, qui porte la lumière de l'Évangile.</p>
+        </div>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-xl-3"><article class="info-card"><div class="card-icon">✦</div><h3>Notre Message</h3><p>Jésus-Christ, l'espoir de l'humanité. Présenter et prêcher Jésus-Christ comme l'unique espoir du salut.</p><a href="#vision" class="card-link">En savoir plus <span aria-hidden="true">→</span></a></article></div>
+            <div class="col-md-6 col-xl-3"><article class="info-card"><div class="card-icon">◎</div><h3>Notre Vision</h3><p>Restaurer et accomplir la mission principale de l'Église, qui est de faire des disciples pour Jésus-Christ.</p><a href="#vision" class="card-link">En savoir plus <span aria-hidden="true">→</span></a></article></div>
+            <div class="col-md-6 col-xl-3"><article class="info-card"><div class="card-icon">◈</div><h3>Notre Mission</h3><p>Enseigner les prescriptions de Jésus-Christ, préparer les disciples à la maturité spirituelle et annoncer le salut.</p><a href="#objectifs" class="card-link">En savoir plus <span aria-hidden="true">→</span></a></article></div>
+            <div class="col-md-6 col-xl-3"><article class="info-card"><div class="card-icon">⌖</div><h3>Notre Champ d'action</h3><p>Présenter les domaines d'action du ministère, en laissant les détails futurs faciles à modifier.</p><a href="#activites" class="card-link">Découvrir <span aria-hidden="true">→</span></a></article></div>
+        </div>
+    </div>
+</section>
+
+<section class="vision-section section-padding" id="vision">
+    <div class="container"><div class="row align-items-center g-5">
+        <div class="col-lg-6"><div class="vision-image-wrap"><img src="~/images/Arthur3.jpeg" alt="Pasteur de l'ADJC en portrait" class="vision-image" /><div class="image-caption"><span>Notre vision</span><strong>Faire des disciples<br />pour Jésus-Christ.</strong></div></div></div>
+        <div class="col-lg-5 offset-lg-1"><p class="eyebrow">Notre raison d'être</p><h2>Pourquoi nous<br /><span>existons ?</span></h2><p class="section-copy">Restaurer et accomplir la mission principale de l'Église, qui est de faire des disciples pour Jésus-Christ.</p><p class="section-copy muted">Nous croyons qu'une Église forte est une Église qui enseigne, qui accompagne et qui témoigne avec amour.</p><a class="btn btn-primary" href="#contact">Nous rejoindre <span aria-hidden="true">↗</span></a></div>
+    </div></div>
+</section>
+
+<section class="section-padding" id="objectifs">
+    <div class="container"><div class="section-heading"><p class="eyebrow">Notre engagement</p><h2>Objectifs assignés</h2><p>Grandir ensemble dans la connaissance de Dieu et dans la pratique de sa Parole.</p></div>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-3"><article class="objective-card"><span class="objective-number">01</span><h3>Un bon enseignement</h3><p>Recevoir une formation biblique solide pour ancrer chaque disciple dans la vérité.</p></article></div>
+            <div class="col-md-6 col-lg-3"><article class="objective-card"><span class="objective-number">02</span><h3>La perfection spirituelle</h3><p>Avancer vers une vie transformée, mature et entièrement consacrée à Dieu.</p></article></div>
+            <div class="col-md-6 col-lg-3"><article class="objective-card"><span class="objective-number">03</span><h3>Les quatre fondements de l'Église</h3><p>L'enseignement, la communion fraternelle, la fraction du pain et les prières.</p></article></div>
+            <div class="col-md-6 col-lg-3"><article class="objective-card"><span class="objective-number">04</span><h3>Un désir urgent pour le Ciel</h3><p>Vivre chaque jour dans l'espérance du retour de Jésus-Christ.</p></article></div>
+        </div>
+    </div>
+</section>
+
+<section class="activities-section section-padding" id="activites">
+    <div class="container"><div class="section-heading text-center light-heading"><p class="eyebrow">Grandir, servir, partager</p><h2>Nos activités</h2><p>Des rendez-vous pour nourrir la foi, fortifier les familles et annoncer l'Évangile.</p></div>
+        <div class="row g-4 mt-2">
+            @{ var activities = new[] { ("01", "École de Samuel", "Former les enfants dans la connaissance et l'amour de la Parole."), ("02", "Le Chant du Coq", "Commencer la journée dans la prière et la présence de Dieu."), ("03", "Prions en Famille", "Un temps de prière et de communion au cœur de chaque foyer."), ("04", "5 Minutes d'Espoir", "Une courte parole pour garder l'espérance au quotidien."), ("05", "Conférence des Ministres et Serviteurs", "Équiper et encourager celles et ceux qui servent l'Église."), ("06", "Croisades d'évangélisation et séminaires bibliques", "Partager l'Évangile et approfondir les fondements de la foi."), ("07", "Œuvres sociales", "Manifester concrètement l'amour du prochain et la compassion.") }; }
+            @foreach (var activity in activities) { <div class="col-md-6 col-lg-4"><article class="activity-card"><div class="activity-icon">✦</div><span class="activity-number">@activity.Item1</span><h3>@activity.Item2</h3><p>@activity.Item3</p></article></div> }
+        </div>
+    </div>
+</section>
+
+<section class="schedule-section section-padding" id="horaires">
+    <div class="container"><div class="row align-items-center g-5"><div class="col-lg-5"><p class="eyebrow">Rendez-vous à l'Église</p><h2>Les horaires<br /><span>des cultes</span></h2><p class="section-copy">Venez célébrer, apprendre et prier avec nous. Nous serons heureux de vous accueillir.</p></div><div class="col-lg-7"><div class="schedule-list"><div class="schedule-item"><div class="schedule-icon">▣</div><div><span>Chaque dimanche</span><h3>Culte d'adoration et de puissance</h3><strong>12H30 – 15H30</strong></div></div><div class="schedule-item"><div class="schedule-icon">◷</div><div><span>Chaque mercredi</span><h3>Culte d'enseignement et prières de délivrance</h3><strong>18H30 – 20H00</strong></div></div></div></div></div></div>
+</section>

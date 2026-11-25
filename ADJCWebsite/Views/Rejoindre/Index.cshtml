@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Nous rejoindre";
+    ViewData["HeroEyebrow"] = "Bienvenue dans la famille ADJC";
+    ViewData["HeroTitle"] = "Rejoignez une communauté de disciples de Jésus-Christ";
+    ViewData["HeroLead"] = "Vous êtes les bienvenus parmi nous. L'ADJC est une communauté qui se rassemble pour apprendre, prier, servir et grandir dans la foi en Jésus-Christ.";
+    ViewData["HeroImage"] = "Arthur5.jpeg";
+    ViewData["HeroAlt"] = "Pasteur de l'ADJC dans un portrait accueillant";
+}
+
+@await Html.PartialAsync("_PageHero")
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <p class="eyebrow">Une invitation à avancer ensemble</p>
+                <h2>Une place pour <span>vous</span></h2>
+                <p class="section-copy">Rejoindre l'ADJC, c'est choisir de marcher avec une famille spirituelle qui met Jésus-Christ au centre de sa vie.</p>
+                <p class="section-copy muted">Que vous découvriez la foi ou que vous cherchiez une communauté où vous enraciner, nous serons heureux de vous accueillir avec simplicité et bienveillance.</p>
+                <div class="bible-quote"><span>« Allez, faites de toutes les nations des disciples... »</span><strong>Matthieu 28:19 — Louis Segond 1910</strong></div>
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+                <div class="join-panel">
+                    <p class="eyebrow">Notre manière de vivre</p>
+                    <h3>Grandir dans la foi, servir avec amour</h3>
+                    <div class="join-panel-item"><span class="card-icon">✦</span><div><h4>Une foi enseignée</h4><p>Nous approfondissons la Parole de Dieu pour construire une foi solide et vivante.</p></div></div>
+                    <div class="join-panel-item"><span class="card-icon">◎</span><div><h4>Une famille accueillante</h4><p>Nous cultivons la communion fraternelle et l'attention portée à chacun.</p></div></div>
+                    <div class="join-panel-item"><span class="card-icon">◈</span><div><h4>Une mission partagée</h4><p>Nous annonçons l'espérance de Jésus-Christ et servons notre prochain.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="soft-section section-padding">
+    <div class="container">
+        <div class="section-heading text-center">
+            <p class="eyebrow">Votre prochain pas</p>
+            <h2>Venez comme vous êtes</h2>
+            <p>Découvrez nos temps de rassemblement et prenez le temps de faire connaissance avec l'ADJC.</p>
+        </div>
+        <div class="row g-4 justify-content-center mt-2">
+            <div class="col-md-6 col-lg-5"><article class="schedule-card"><div class="schedule-icon">▣</div><div><span>Chaque dimanche</span><h3>Culte d'adoration et de puissance</h3><strong>12H30 – 15H30</strong></div></article></div>
+            <div class="col-md-6 col-lg-5"><article class="schedule-card"><div class="schedule-icon">◷</div><div><span>Chaque mercredi</span><h3>Culte d'enseignement et prières de délivrance</h3><strong>18H30 – 20H00</strong></div></article></div>
+        </div>
+        <div class="join-actions text-center mt-5"><a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register">Je souhaite rejoindre l'ADJC <span aria-hidden="true">↗</span></a><a class="btn btn-outline-primary" asp-controller="Contact" asp-action="Index">Nous contacter</a></div>
+    </div>
+</section>
