@@ -1,0 +1,143 @@
+@model VolunteerApplicationViewModel
+@{
+    ViewData["Title"] = "Servir avec nous";
+    var submitted = Context.Request.Query["submitted"] == "true";
+    var departments = new[]
+    {
+        ("✦", "Médias & Communication", "Mettez votre créativité au service de la transmission de l'Évangile."),
+        ("⌂", "Protocole & Accueil", "Accueillez chaque personne avec soin, respect et fraternité."),
+        ("↗", "Partenariats", "Contribuez à développer des collaborations utiles à la mission."),
+        ("♧", "Évangélisation", "Partagez la bonne nouvelle et accompagnez les personnes vers Christ."),
+        ("♫", "Louange & Adoration", "Servez Dieu par la musique, la voix et une vie d'adoration."),
+        ("▤", "Enseignement biblique", "Aidez chacun à grandir dans la connaissance et la pratique de la Parole."),
+        ("♡", "Œuvres sociales", "Participez à des actions concrètes de solidarité et de soutien."),
+        ("✧", "Intercession & Prière", "Portez l'Église, ses familles et sa mission dans la prière.")
+    };
+}
+
+<section class="serve-hero">
+    <div class="serve-hero-image" role="img" aria-label="Membres de l'Église réunis dans la communion"></div>
+    <div class="serve-hero-overlay"></div>
+    <div class="container position-relative">
+        <p class="eyebrow">Servir avec nous</p>
+        <h1>Mettez vos dons et vos talents<br />au service de Dieu.</h1>
+        <p class="serve-hero-lead">Chaque talent compte. Découvrez comment participer à la vie de l'Église et contribuer à sa mission.</p>
+        <blockquote class="serve-verse">« Comme de bons dispensateurs des diverses grâces de Dieu, que chacun de vous mette au service des autres le don qu'il a reçu. »<cite>1 Pierre 4:10 — Louis Segond 1910</cite></blockquote>
+    </div>
+</section>
+
+<section class="section-padding serve-departments" id="departements">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <p class="eyebrow">Des possibilités pour chacun</p>
+            <h2>Où souhaitez-vous <span>servir ?</span></h2>
+            <p>Les domaines ci-dessous sont des propositions de service en cours de développement. Ils ne constituent pas encore la liste officielle des ministères confirmés de l'Église.</p>
+        </div>
+        <div class="row g-4">
+            @foreach (var department in departments)
+            {
+                <div class="col-md-6 col-xl-3">
+                    <article class="serve-card">
+                        <div class="serve-icon" aria-hidden="true">@department.Item1</div>
+                        <h3>@department.Item2</h3>
+                        <p>@department.Item3</p>
+                        <a class="card-link serve-select" href="#candidature" data-department="@department.Item2">Je veux servir <span aria-hidden="true">→</span></a>
+                    </article>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section-padding serve-application" id="candidature">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="serve-form-card">
+                    <div class="section-heading mb-4">
+                        <p class="eyebrow">Votre candidature</p>
+                        <h2>Faisons connaissance.</h2>
+                        <p>Remplissez ce formulaire. Notre équipe examinera votre demande avec attention. Aucun rôle n'est attribué automatiquement.</p>
+                    </div>
+                    @if (submitted && TempData["VolunteerApplicationSubmitted"] is string message)
+                    {
+                        <div class="alert alert-success" role="status">@message</div>
+                    }
+                    <form asp-action="Index" method="post" class="serve-form needs-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label asp-for="FirstName" class="form-label"></label>
+                                <input asp-for="FirstName" class="form-control" autocomplete="given-name" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="LastName" class="form-label"></label>
+                                <input asp-for="LastName" class="form-control" autocomplete="family-name" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Email" class="form-label"></label>
+                                <input asp-for="Email" class="form-control" autocomplete="email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Country" class="form-label"></label>
+                                <input asp-for="Country" class="form-control" autocomplete="country-name" />
+                                <span asp-validation-for="Country" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="Department" class="form-label"></label>
+                                <select asp-for="Department" class="form-select">
+                                    <option value="">Sélectionnez un département</option>
+                                    @foreach (var department in VolunteerApplicationViewModel.Departments)
+                                    {
+                                        <option value="@department">@department</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="Department" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="ParticipationType" class="form-label"></label>
+                                <select asp-for="ParticipationType" class="form-select">
+                                    <option value="">Sélectionnez une modalité</option>
+                                    @foreach (var type in VolunteerApplicationViewModel.ParticipationTypes)
+                                    {
+                                        <option value="@type">@type</option>
+                                    }
+                                </select>
+                                <span asp-validation-for="ParticipationType" class="text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <label asp-for="SkillsExperience" class="form-label"></label>
+                                <textarea asp-for="SkillsExperience" class="form-control" rows="4"></textarea>
+                                <span asp-validation-for="SkillsExperience" class="text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <label asp-for="Motivation" class="form-label"></label>
+                                <textarea asp-for="Motivation" class="form-control" rows="4"></textarea>
+                                <span asp-validation-for="Motivation" class="text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input asp-for="ConsentGiven" class="form-check-input" />
+                                    <label asp-for="ConsentGiven" class="form-check-label">J'accepte que les informations envoyées soient traitées pour l'examen de ma candidature de service.</label>
+                                </div>
+                                <span asp-validation-for="ConsentGiven" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 d-flex align-items-center gap-3">
+                                <button type="submit" class="btn btn-primary serve-submit"><span class="submit-label">Envoyer ma demande</span><span class="submit-loading" hidden>Envoi en cours…</span></button>
+                                <small class="text-muted">Tous les champs sont obligatoires.</small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/serve.js" asp-append-version="true"></script>
+}
