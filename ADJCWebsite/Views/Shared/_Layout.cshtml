@@ -19,16 +19,16 @@
                     <span class="brand-name">Assemblée des Disciples<br class="d-none d-xl-block" /> de Jésus-Christ</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        aria-expanded="false" aria-label="Ouvrir le menu principal">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mainNavigation">
-                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                         <li class="nav-item">
-                            <a class="nav-link" href="/#accueil">Accueil</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Accueil</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Découvrir</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="discoverMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Découvrir</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" asp-controller="Ministry" asp-action="Index">Notre Ministère</a></li>
                                 <li><a class="dropdown-item" asp-controller="Vision" asp-action="Index">Vision</a></li>
@@ -36,11 +36,19 @@
                                 <li><a class="dropdown-item" href="/#horaires">Prédications</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" asp-controller="Rejoindre" asp-action="Index">Nous rejoindre</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="participateMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Participer</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Rejoindre" asp-action="Index">Nous rejoindre</a></li>
+                                <li><a class="dropdown-item" asp-controller="Servir" asp-action="Index">Servir avec nous</a></li>
+                                <li><a class="dropdown-item" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                    <a class="btn btn-primary ms-lg-4 mt-3 mt-lg-0" asp-controller="Contact" asp-action="Index">Nous écrire <span aria-hidden="true">↗</span></a>
-                    <partial name="_LoginPartial" />
+                    <div class="navbar-actions d-lg-flex align-items-lg-center ms-lg-3">
+                        <a class="btn btn-donate mt-3 mt-lg-0" asp-controller="Donate" asp-action="Index"><span aria-hidden="true">♥</span> Faire un don</a>
+                        <partial name="_LoginPartial" />
+                    </div>
                 </div>
             </div>
         </nav>
@@ -67,6 +75,8 @@
                         <li><a asp-controller="Ministry" asp-action="Index">Notre Ministère</a></li>
                         <li><a asp-controller="Vision" asp-action="Index">Notre vision</a></li>
                         <li><a asp-controller="Rejoindre" asp-action="Index">Nous rejoindre</a></li>
+                        <li><a asp-controller="Servir" asp-action="Index">Servir avec nous</a></li>
+                        <li><a asp-controller="Donate" asp-action="Index">Faire un don</a></li>
                         <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                         <li><a href="/#activites">Activités</a></li>
                     </ul>
