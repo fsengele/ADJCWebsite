@@ -1,0 +1,108 @@
+@{
+    ViewData["Title"] = "Faire un don";
+}
+
+<section class="donate-hero">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <p class="eyebrow">Soutenir la mission</p>
+                <h1>Ensemble, soutenons <span>l'œuvre de Dieu.</span></h1>
+                <p class="donate-hero-lead">Votre générosité contribue à faire grandir une communauté enracinée dans la Parole, la foi et l'amour du prochain.</p>
+                <a class="btn btn-primary" href="#don-form">Choisir un montant <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="col-lg-5">
+                <div class="donate-verse-card">
+                    <span class="donate-quote-mark" aria-hidden="true">“</span>
+                    <p>Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie.</p>
+                    <strong>2 Corinthiens 9:7 — Louis Segond 1910</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding donate-support">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <p class="eyebrow">Votre soutien porte du fruit</p>
+            <h2>Trois façons de contribuer</h2>
+            <p>Les dons sont entièrement volontaires. Chaque contribution est accueillie avec reconnaissance et utilisée pour soutenir la mission de l'Église.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4"><article class="donate-area-card"><div class="donate-area-icon">✦</div><h3>Évangélisation</h3><p>Partager l'espérance de l'Évangile et accompagner de nouvelles personnes dans la foi.</p></article></div>
+            <div class="col-md-4"><article class="donate-area-card"><div class="donate-area-icon">▤</div><h3>Éducation biblique</h3><p>Encourager l'enseignement biblique et la formation de disciples enracinés dans la Parole.</p></article></div>
+            <div class="col-md-4"><article class="donate-area-card"><div class="donate-area-icon">♡</div><h3>Assistance sociale</h3><p>Apporter une aide concrète aux personnes et aux familles qui en ont besoin.</p></article></div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding donate-form-section" id="don-form">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9">
+                <div class="donate-form-card">
+                    <div class="section-heading mb-4">
+                        <p class="eyebrow">Préparer votre don</p>
+                        <h2>Un geste libre et généreux.</h2>
+                        <p>Choisissez un montant indicatif et une affectation. Aucun paiement ne sera effectué sur cette page durant cette phase de développement.</p>
+                    </div>
+                    <form class="donate-form" novalidate>
+                        <fieldset class="mb-4">
+                            <legend class="donate-label">Montant du don</legend>
+                            <div class="donate-amounts" role="group" aria-label="Montants suggérés">
+                                <button type="button" class="donate-amount" data-amount="10">10 €</button>
+                                <button type="button" class="donate-amount" data-amount="25">25 €</button>
+                                <button type="button" class="donate-amount" data-amount="50">50 €</button>
+                                <button type="button" class="donate-amount" data-amount="100">100 €</button>
+                            </div>
+                            <label class="donate-label mt-3" for="customAmount">Autre montant (en euros)</label>
+                            <div class="input-group donate-custom-amount">
+                                <input id="customAmount" class="form-control" type="number" min="1" step="0.01" inputmode="decimal" placeholder="Montant libre" aria-describedby="amountHelp" />
+                                <span class="input-group-text">€</span>
+                            </div>
+                            <small id="amountHelp" class="form-text">Le montant choisi sera utilisé lors de la future configuration du paiement sécurisé.</small>
+                            <p class="donate-selected" aria-live="polite">Montant sélectionné : <strong><span id="selectedAmount">—</span></strong></p>
+                        </fieldset>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="donate-label" for="donationPurpose">Affectation souhaitée</label>
+                                <select id="donationPurpose" class="form-select">
+                                    <option value="">Choisissez une affectation</option>
+                                    <option>Évangélisation</option>
+                                    <option>Éducation biblique</option>
+                                    <option>Assistance sociale</option>
+                                    <option>Selon les besoins de l'Église</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="donate-label" for="currency">Devise</label>
+                                <select id="currency" class="form-select" disabled aria-label="Devise sélectionnée">
+                                    <option>EUR — Euro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="donor-details mt-4">
+                            <h3>Informations du donateur <span>(facultatif)</span></h3>
+                            <p>Ces informations ne sont pas nécessaires pour préparer votre don.</p>
+                            <div class="row g-3">
+                                <div class="col-md-6"><label class="donate-label" for="donorName">Nom complet</label><input id="donorName" class="form-control" type="text" autocomplete="name" /></div>
+                                <div class="col-md-6"><label class="donate-label" for="donorEmail">Adresse e-mail</label><input id="donorEmail" class="form-control" type="email" autocomplete="email" /></div>
+                            </div>
+                        </div>
+                        <div class="donate-payment-notice mt-4" role="status">
+                            <strong>Paiement sécurisé bientôt disponible</strong>
+                            <p>Les paiements en ligne ne sont pas encore configurés. Aucun numéro de carte bancaire ni donnée de paiement n'est collecté.</p>
+                        </div>
+                        <button type="button" class="btn btn-primary donate-submit" disabled title="Le paiement sera activé après configuration officielle du prestataire">Continuer vers le paiement <span aria-hidden="true">→</span></button>
+                        <p class="donate-voluntary"><span aria-hidden="true">♥</span> Votre don est entièrement volontaire. Merci pour votre soutien.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/donate.js" asp-append-version="true"></script>
+}
