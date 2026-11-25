@@ -1,0 +1,55 @@
+@page
+@model ADJCWebsite.Areas.Identity.Pages.Account.RegisterModel
+@{
+    Layout = "/Areas/Identity/Pages/Account/_AuthLayout.cshtml";
+    ViewData["Title"] = "Inscription";
+    ViewData["AuthVerse"] = "Ils persévéraient dans l'enseignement des apôtres, dans la communion fraternelle, dans la fraction du pain, et dans les prières.";
+    ViewData["AuthReference"] = "Actes 2:42 — Louis Segond 1910";
+    ViewData["AuthImage"] = "Arthur5.jpeg";
+    ViewData["AuthImageAlt"] = "Pasteur de l'ADJC dans un portrait accueillant";
+}
+
+<div class="auth-page">
+    <div class="auth-form-panel">
+        <div class="auth-form-inner auth-register-inner">
+            <a class="auth-mobile-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/images/WhatsApp Image 2026-11-13 at 11.23.50 AM.jpeg" alt="Logo officiel de l'ADJC" />
+                <span>ADJC</span>
+            </a>
+            <div class="auth-heading">
+                <p class="auth-eyebrow">Rejoindre la communauté</p>
+                <h1>Créer mon compte</h1>
+                <p>Rejoignez notre communauté en ligne et grandissons ensemble dans la foi.</p>
+            </div>
+            <form id="register-form" method="post" asp-route-returnUrl="@Model.ReturnUrl" class="auth-form" data-auth-form="register" novalidate>
+                <div asp-validation-summary="ModelOnly" class="auth-validation-summary" role="alert"></div>
+                <div class="auth-field">
+                    <label asp-for="Input.Email"></label>
+                    <div class="auth-input-wrap"><span class="auth-input-icon" aria-hidden="true">@@</span><input asp-for="Input.Email" class="form-control" autocomplete="email" autofocus /><span class="auth-field-line"></span></div>
+                    <span asp-validation-for="Input.Email" class="auth-validation"></span>
+                </div>
+                <div class="auth-field">
+                    <label asp-for="Input.Password"></label>
+                    <div class="auth-input-wrap"><span class="auth-input-icon" aria-hidden="true">●</span><input asp-for="Input.Password" class="form-control" autocomplete="new-password" data-password-input data-min-length="@Model.PasswordPolicy.RequiredLength" data-require-digit="@Model.PasswordPolicy.RequireDigit.ToString().ToLowerInvariant()" data-require-lower="@Model.PasswordPolicy.RequireLowercase.ToString().ToLowerInvariant()" data-require-upper="@Model.PasswordPolicy.RequireUppercase.ToString().ToLowerInvariant()" data-require-special="@Model.PasswordPolicy.RequireNonAlphanumeric.ToString().ToLowerInvariant()" /><button type="button" class="password-toggle" data-password-toggle aria-label="Afficher le mot de passe">Afficher</button><span class="auth-field-line"></span></div>
+                    <span asp-validation-for="Input.Password" class="auth-validation"></span>
+                    <div class="password-guide" aria-live="polite"><span class="password-guide-title">Votre mot de passe doit contenir :</span><ul class="password-rules"><li data-rule="length">@Model.PasswordPolicy.RequiredLength caractères minimum</li><li data-rule="digit">Un chiffre</li><li data-rule="lower">Une lettre minuscule</li><li data-rule="upper">Une lettre majuscule</li><li data-rule="special">Un caractère spécial</li></ul></div>
+                </div>
+                <div class="auth-field">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <div class="auth-input-wrap"><span class="auth-input-icon" aria-hidden="true">●</span><input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" data-password-confirm /><button type="button" class="password-toggle" data-password-toggle aria-label="Afficher la confirmation du mot de passe">Afficher</button><span class="auth-field-line"></span></div>
+                    <span asp-validation-for="Input.ConfirmPassword" class="auth-validation"></span><span class="password-match" data-password-match aria-live="polite"></span>
+                </div>
+                <button type="submit" class="btn auth-submit" data-auth-submit><span data-submit-label>Créer mon compte</span><span data-submit-loading hidden>Création en cours…</span><span aria-hidden="true">↗</span></button>
+            </form>
+            <p class="auth-switch">Vous avez déjà un compte ? <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Se connecter</a></p>
+            <a class="auth-back" href="@Url.Action("Index", "Home", new { area = "" })">← Retour au site</a>
+        </div>
+    </div>
+    <div class="auth-visual-panel">
+        @await Html.PartialAsync("_AuthVisual")
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

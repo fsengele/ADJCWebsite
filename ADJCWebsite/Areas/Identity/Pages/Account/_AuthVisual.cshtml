@@ -1,0 +1,25 @@
+@{
+    var verse = ViewData["AuthVerse"] as string ?? "Jésus-Christ est le même hier, aujourd'hui, et éternellement.";
+    var reference = ViewData["AuthReference"] as string ?? "Hébreux 13:8 — Louis Segond 1910";
+    var image = ViewData["AuthImage"] as string ?? "Arthur 2.jpeg";
+    var alt = ViewData["AuthImageAlt"] as string ?? "Pasteur de l'ADJC";
+}
+
+<aside class="auth-visual" aria-label="Présentation de l'ADJC">
+    <div class="auth-visual-image">
+        <img src="~/images/@image" alt="@alt" />
+    </div>
+    <div class="auth-visual-overlay"></div>
+    <div class="auth-visual-content">
+        <a class="auth-brand" asp-area="" asp-controller="Home" asp-action="Index">
+            <img src="~/images/WhatsApp Image 2026-11-13 at 11.23.50 AM.jpeg" alt="Logo officiel de l'ADJC" />
+            <span>Assemblée des Disciples<br />de Jésus-Christ</span>
+        </a>
+        <a class="auth-serve-link" asp-area="" asp-controller="Servir" asp-action="Index">Servir avec nous <span aria-hidden="true">↗</span></a>
+        <div class="auth-verse">
+            <span class="auth-verse-mark" aria-hidden="true">“</span>
+            <p>@verse</p>
+            <strong>@reference</strong>
+        </div>
+    </div>
+</aside>
